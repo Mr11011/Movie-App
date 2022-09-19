@@ -31,7 +31,8 @@ class MovieAdapter(
     }
 
 }
-///////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////// MovieViewHolder ////////////////////////////////////
 
 
 class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -44,7 +45,7 @@ class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         itemView.label.text = movie.title
         itemView.label.text = movie.title
-        Glide.with(itemView).load(IMAGE_BASE + movie.poster).into(itemView.image1)
+        Glide.with(itemView).load(IMAGE_BASE + movie.poster).centerCrop().into(itemView.image1)
 
 
     }
