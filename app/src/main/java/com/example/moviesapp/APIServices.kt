@@ -15,6 +15,14 @@ interface APIServices {
         api_key: String = API_KEY,
     ): Call<MovieResponse>
 
+    @GET("movie/top_rated")
+
+    fun getTopRatedList(
+        @Query("api_key")
+        api_key: String = API_KEY,
+    ): Call<MovieResponse>
+
+
 }
 
 
