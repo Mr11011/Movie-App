@@ -1,38 +1,21 @@
 package com.example.moviesapp
 
-import com.example.moviesapp.MovieResponse
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Query
+
+const val API_KEY = "644a10f035ca4d11b1504511b3315fb8"
 
 interface APIServices {
 
-    @GET("/3/movie/popular?api_key=644a10f035ca4d11b1504511b3315fb8/")
-    fun getMovieList(): Call<MovieResponse>
+    @GET("movie/popular")
+
+    fun getMovieList(
+        @Query("api_key")
+        api_key: String = API_KEY,
+    ): Call<MovieResponse>
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //
