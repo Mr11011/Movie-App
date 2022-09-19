@@ -13,14 +13,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif-black"
         android:text="Popular Movies"
         android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold|normal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
 
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         android:id="@+id/loadingBar"
@@ -60,16 +60,16 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="55dp"
         android:layout_marginBottom="30dp"
+        android:fontFamily="sans-serif-black"
         android:text="Top Rated Movies"
         android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold|normal"
         app:layout_constraintBottom_toTopOf="@id/recyclerView2"
         app:layout_constraintStart_toStartOf="@id/recyclerView2"
-        app:layout_constraintTop_toBottomOf="@id/recyclerView"
 
 
-        />
+        app:layout_constraintTop_toBottomOf="@id/recyclerView" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView2"
