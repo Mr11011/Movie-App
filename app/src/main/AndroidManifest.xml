@@ -9,14 +9,16 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/mlogo"
+        android:icon="@drawable/movie"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/mlogo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MoviesApp"
+        android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
