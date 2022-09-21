@@ -38,7 +38,7 @@ class SplashScreen : AppCompatActivity() {
 
         //Animation for splash screen
         imageView.animation = topAnim
-        label.animation = topAnim
+        label.animation = bottomAnim
 
 
         Handler().postDelayed({
