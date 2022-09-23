@@ -9,9 +9,10 @@ import kotlinx.android.synthetic.main.item.view.*
 
 
 class MovieAdapter(
-    private val movies: List<Movie>
+    private val movies: MutableList<Movie>,
+    private val onMovieClick: ((movie: Movie) -> Unit)?
 ) :
-    RecyclerView.Adapter<MovieViewHolder>() {
+    RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
@@ -30,27 +31,34 @@ class MovieAdapter(
         return movies.size
     }
 
-}
+
 ///////////////////////////////////////////////////////////////////////////////
 
 
-class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
 
-    private val IMAGE_BASE = "https://image.tmdb.org/t/p/w500/"
+        private val imageBase = "https://image.tmdb.org/t/p/w500/"
 
 
-    fun bind(movie: Movie) {
+        fun bind(movie: Movie) {
 
-        itemView.movie_name.text = movie.title
-        itemView.movie_rate.text = movie.rate.toString()
-        itemView.rate_bar.rating = movie.rate!!.div(2)
-        Glide
-            .with(itemView)
-            .load(IMAGE_BASE + movie.poster)
-            .into(itemView.movie_image)
+            itemView.movie_name.text = movie.title
+            itemView.movie_rate.text = movie.rate.toString()
+            itemView.rate_bar.rating = movie.rate!!.div(2)
+            Glide
+                .with(itemView)
+                .load(imageBase + movie.poster)
+                .into(itemView.movie_image)
+
+            itemView.setOnClickListener {
+                onMovieClick?.invoke(movie)
+
+            }
+
+
+        }
 
 
     }
-
 }

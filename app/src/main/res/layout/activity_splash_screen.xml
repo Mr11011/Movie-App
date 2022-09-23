@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashScreen"
-    android:background="@color/black">
+    android:background="@color/bg_color">
 
     <ImageView
         android:id="@+id/splash_icon"
@@ -29,7 +29,7 @@
         android:fontFamily="@font/bangers"
         android:text="MOVIE APP"
         android:textAlignment="center"
-        android:textColor="#63AFFD"
+        android:textColor="@color/base_color"
         android:textSize="45sp"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="@id/splash_icon"
